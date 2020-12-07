@@ -343,10 +343,10 @@ def run_simple(data, run_idx, mode, lr, clip, model, optimizer, criterion, mode2
             users_acc[u][1] += acc[2]
         #print("data is {}",loss.data.cpu()[0])
         print("data is {}",loss.data.cpu().numpy())
-        tmp = loss.data.cpu().numpy()
+        tmp = loss.data.cpu().numpy().tolist()
         print(type(tmp))
         if loss.data.cpu().numpy():
-            total_loss.append(loss.data.cpu().numpy()[0])
+            total_loss.append(tmp[0])
 
     avg_loss = np.mean(total_loss, dtype=np.float64)
     if mode == 'train':
