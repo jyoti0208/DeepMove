@@ -228,6 +228,7 @@ def generate_queue(train_idx, mode, mode2):
                 initial_queue[u] = deque(train_idx[u])
         queue_left = 1
         while queue_left > 0:
+            print("user.....{}",user)
             np.random.shuffle(user)
             for j, u in enumerate(user):
                 if len(initial_queue[u]) > 0:
