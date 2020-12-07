@@ -229,7 +229,7 @@ def generate_queue(train_idx, mode, mode2):
         queue_left = 1
         while queue_left > 0:
             print("user.....{}",user)
-            np.random.shuffle(user)
+            np.random.shuffle(list(user))
             for j, u in enumerate(user):
                 if len(initial_queue[u]) > 0:
                     train_queue.append((u, initial_queue[u].popleft()))
