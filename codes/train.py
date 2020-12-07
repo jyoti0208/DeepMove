@@ -337,14 +337,14 @@ def run_simple(data, run_idx, mode, lr, clip, model, optimizer, criterion, mode2
                 pass
             optimizer.step()
         elif mode == 'test':
-            print("in test................")
+            #print("in test................")
             users_acc[u][0] += len(target)
             acc = get_acc(target, scores)
             users_acc[u][1] += acc[2]
         #print("data is {}",loss.data.cpu()[0])
-        print("data is {}",loss.data.cpu().numpy())
+        #print("data is {}",loss.data.cpu().numpy())
         tmp = loss.data.cpu().numpy().tolist()
-        print(type(tmp))
+        #print(type(tmp))
         if loss.data.cpu().numpy():
             total_loss.append(tmp)
 
