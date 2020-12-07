@@ -342,7 +342,8 @@ def run_simple(data, run_idx, mode, lr, clip, model, optimizer, criterion, mode2
             acc = get_acc(target, scores)
             users_acc[u][1] += acc[2]
         print("data is {}",loss)
-        if loss.data.cpu():
+        print("data is {}",loss.data.cpu())
+        if loss.data.cpu().numpy():
             total_loss.append(loss.data.cpu().numpy()[0])
 
     avg_loss = np.mean(total_loss, dtype=np.float64)
