@@ -325,6 +325,7 @@ def run_simple(data, run_idx, mode, lr, clip, model, optimizer, criterion, mode2
         loss = criterion(scores, target)
 
         if mode == 'train':
+            print("in train)
             loss.backward()
             # gradient clipping
             try:
@@ -336,10 +337,11 @@ def run_simple(data, run_idx, mode, lr, clip, model, optimizer, criterion, mode2
                 pass
             optimizer.step()
         elif mode == 'test':
+            print("in test................")
             users_acc[u][0] += len(target)
             acc = get_acc(target, scores)
             users_acc[u][1] += acc[2]
-        print(loss.data.cpu())
+        print("data is {}",loss)
         total_loss.append(loss.data.cpu().numpy()[0])
 
     avg_loss = np.mean(total_loss, dtype=np.float64)
