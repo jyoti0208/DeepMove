@@ -325,7 +325,7 @@ def run_simple(data, run_idx, mode, lr, clip, model, optimizer, criterion, mode2
         loss = criterion(scores, target)
 
         if mode == 'train':
-            print("in train)
+            print("in train")
             loss.backward()
             # gradient clipping
             try:
